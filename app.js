@@ -1,7 +1,7 @@
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const express = require("express");
-//const { spawn } = require("child_process");
+
 
 
 const app = express();
@@ -9,40 +9,32 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+let htmlContent = "";
+
 
 app.get('/' , function(req , res)
 {
-res.render('index');
+  res.render('index' , {htmlContent : htmlContent});
 });
+
 
 
 app.post('/' , function(req , res)
 {
-  const a = Number(req.body.num1);
-  const b = Number(req.body.num2);
-  const sum = 0;
-  var dataString = "";
+  let htmlContent = req.body.htmlInput;
+//  console.log(htmlContent);
 
   var spawn = require("child_process").spawn;
-  var process = spawn('python',["./add.py",a,b,sum] );
+  var process = spawn('python',["./convert.py" , htmlContent] );
 
 
-//   process.stdout.on('data' , function(data)
-// {
-//   dataString+=data.toString();
-// });
+  process.stdout.on('data' , function(data)
+   {
 
+     console.log(data.toString());
 
-console.log(process);
-
-
-
-
-
-
-
-
-  res.render('sum' , {sum : sum});
+   });
+    res.render('index'  , {htmlContent : htmlContent});
 
 });
 

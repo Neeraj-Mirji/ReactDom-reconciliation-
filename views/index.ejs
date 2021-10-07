@@ -3,25 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title> React Dom Reconcilation</title>
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
 
 <!-- <textarea  rows="40" cols="75">
 Enter HTML here :
 </textarea> -->
-<form  action="/" method="post">
 
-    <label for="num1"> A : </label>
-    <input type="number" name="num1" id="num1">
+<form class="" action="/" method="post">
 
-    <label for="num2"> B : </label>
-    <input type="number" name="num2" id="num2">
+  <div class="html">
 
+    <label for="htmlInput"> Input HTML here : </label>
+    <textarea  name="htmlInput" id="htmlInput" rows="40" cols="75"> <%= htmlContent %> </textarea>
+    <button type="submit"  name="button"> convert </button>
 
-  <button id="add" type="submit" name="button"> Add </button>
-
+  </div>
 
 </form>
 
+
+
+
+
+
+<script data-main="js/index.js" src="js/require.js"></script>
   </body>
 </html>
