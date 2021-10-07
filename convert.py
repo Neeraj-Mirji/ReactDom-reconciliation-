@@ -5,9 +5,15 @@ import matplotlib.pyplot as plt
 from networkx.drawing.nx_agraph import graphviz_layout
 
 
-htmlContent = sys.argv[1]
-# print(htmlContent)
-raw = htmlContent
+# htmlContent = sys.argv[1]
+# # print(htmlContent)
+# raw = htmlContent
+
+raw = '''
+<html>
+<h1> hi </h1>
+</html>
+'''
 
 
 
