@@ -51,6 +51,7 @@ for node, label in labels.items():
 
 ax.xaxis.set_visible(False)
 ax.yaxis.set_visible(False)
+plt.savefig("./public/images/output.jpg")
 plt.show()
 
 # print(G_edges)
