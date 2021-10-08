@@ -9,8 +9,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="stack.js"></script>
-    <script src="script.js" type="module"></script> -->
+     <script src="js/index.js"></script>
+
 </head>
 
 <body>
@@ -31,19 +31,27 @@
         <div class="text_box" style="padding: 60px">
             Input html code in the box below
             <br><br>
-            <textarea class="form-control" id="htmlContent" style="height: 100%;"></textarea>
+            <textarea class="form-control" name="htmlInput"  style="height: 100%;"><%= htmlContent %></textarea>
         </div>
         <div class="text_box" style="overflow-y: scroll">
             <span id="temptext" style="width: 100%; text-align: center; font-size: x-large">
                 DOM Tree will be shown here !
+                <% if(flag) { %>
+                    
+                    <img src="images/output.jpg" alt="">
+                <% } %>
+
+         
+            
+
             </span>
         </div>
     </div>
 
     <div>
         <br>
-        <button type="submit" class="btn btn-success" id="undo">Convert</button>
-        <button type="button" class="btn btn-danger" id="clear">Clear Box</button>
+        <button type="submit"  class="btn btn-success" name="convert">Convert </button>
+        <button type="submit" class="btn btn-danger" name="clear">Clear Box</button>
     </div>
 
     </form>
