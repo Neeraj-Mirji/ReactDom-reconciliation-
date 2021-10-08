@@ -10,19 +10,24 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 let htmlContent = "";
+let flag = 0;
+let convertFlag = 0;
+let clearFlag = 0;
 
 
 app.get('/' , function(req , res)
 {
-  res.render('index' , {htmlContent : htmlContent});
+  res.render('index' , {htmlContent : htmlContent , flag : flag , convertFlag : convertFlag , clearFlag : clearFlag});
 });
 
 
 
 app.post('/' , function(req , res)
 {
-  let htmlContent = req.body.htmlInput;
-//  console.log(htmlContent);
+
+  htmlContent = req.body.htmlInput;
+  flag = 1;
+  console.log(convertFlag);
 
   var spawn = require("child_process").spawn;
   var process = spawn('python',["./convert.py" , htmlContent] );
@@ -34,7 +39,7 @@ app.post('/' , function(req , res)
      console.log(data.toString());
 
    });
-    res.render('index'  , {htmlContent : htmlContent});
+   res.render('index' , {htmlContent : htmlContent , flag : flag , convertFlag : convertFlag , clearFlag : clearFlag});
 
 });
 
