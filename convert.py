@@ -5,15 +5,15 @@ import matplotlib.pyplot as plt
 from networkx.drawing.nx_agraph import graphviz_layout
 
 
-# htmlContent = sys.argv[1]
-# # print(htmlContent)
-# raw = htmlContent
+htmlContent = sys.argv[1]
+#print(htmlContent)
+raw = htmlContent
 
-raw = '''
-<html>
-<h1> hi </h1>
-</html>
-'''
+# raw = '''
+# <html>
+# <h1> hi </h1>
+# </html>
+# '''
 
 
 
@@ -58,7 +58,7 @@ for node, label in labels.items():
 ax.xaxis.set_visible(False)
 ax.yaxis.set_visible(False)
 plt.savefig("./public/images/output.jpg")
-plt.show()
+#plt.show()
 
 # print(G_edges)
 # print(G_nodes)
