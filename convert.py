@@ -32,6 +32,8 @@ labels = {}     # needed to map from node to tag
 html_tag = html.document_fromstring(raw)
 traverse(html_tag, G, labels, G_edges, G_nodes)
 
+#print(labels)
+
 
 pos = graphviz_layout(G, prog='dot')
 
@@ -57,6 +59,7 @@ for node, label in labels.items():
 
 ax.xaxis.set_visible(False)
 ax.yaxis.set_visible(False)
+htmlContent = "Neeraj"
 plt.savefig("./public/images/output.jpg")
 #plt.show()
 
