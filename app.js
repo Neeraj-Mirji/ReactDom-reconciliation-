@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 let htmlContent = "";
-let flag = 0;
+let flag = 1;
 let convertFlag = 0;
 let clearFlag = 0;
 
@@ -27,7 +27,7 @@ app.post('/' , function(req , res)
 
   htmlContent = req.body.htmlInput;
   flag = 1;
-  console.log(convertFlag);
+  // console.log(convertFlag);
 
   var spawn = require("child_process").spawn;
   var process = spawn('python',["./convert.py" , htmlContent] );
