@@ -9,11 +9,19 @@ form
 }
 
 .text_box {
-    width: 50%;
+    width: 33%;
     height: 100%;
     border: 1px solid lightgray;
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
+}
+
+.text_box2 {
+    width: 33%;
+    height: 100%;
+    border: 1px solid lightgray;
+    display: flex;
     align-content: center;
 }
 

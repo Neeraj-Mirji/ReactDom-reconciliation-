@@ -33,17 +33,25 @@
             <br><br>
             <textarea class="form-control" name="htmlInput"  style="height: 100%;"><%= htmlContent %></textarea>
         </div>
-        <div class="text_box" style="overflow-y: scroll">
+        <div class="text_box2" style="overflow-y: scroll">
             <span id="temptext" style="width: 100%; text-align: center; font-size: x-large">
-                DOM Tree will be shown here !
+                Real DOM Tree will be shown here !
                 <% if(flag) { %>
-                    
                     <img src="images/output.jpg" alt="">
                 <% } %>
-
-         
-            
-
+            </span>
+        </div>
+        <div class="text_box2" style="overflow-y: scroll">
+            <span id="temptext" style="width: 100%; text-align: center; font-size: x-large">
+                Virtual DOM Trees will be shown here !</br>
+                <% if(flag) { %>
+                    After change : <br/>
+                    <img src="images/output.jpg" alt="">
+                <% } %>
+                <% if(flag==2) { %>
+                    Before change : <br/>
+                    <img src="images/output2.jpg" alt="">
+                <% } %>
             </span>
         </div>
     </div>

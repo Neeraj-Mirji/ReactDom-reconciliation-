@@ -11,8 +11,13 @@ app.use(express.static("public"));
 
 let htmlContent = "";
 let flag = 0;
-let convertFlag = 0;
-let clearFlag = 0;
+
+function incrementFlag(flag) {
+  if(flag<2){
+    flag = flag + 1;
+  }
+  return flag;
+}
 
 
 app.get('/' , function(req , res)
@@ -27,17 +32,17 @@ app.post('/' , function(req , res)
 
   htmlContent = "";
   htmlContent = req.body.htmlInput;
-  flag = 1;
-  
+  flag = incrementFlag(flag);
+  // console.log(flag);
 
   var spawn = require("child_process").spawn;
-  var process = spawn('python',["./convert.py" , htmlContent] );
+  var process = spawn('python',["./convert.py" , htmlContent, flag] );
 
 
   process.stdout.on('data' , function(data)
    {
 
-     console.log(data.toString());
+    //  console.log(data.toString());
 
    });
    

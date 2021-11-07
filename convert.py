@@ -1,11 +1,13 @@
 import sys
 import networkx as nx
 from lxml import html
+import cv2
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_agraph import graphviz_layout
 
 
 htmlContent = sys.argv[1]
+flag = sys.argv[2]
 #print(htmlContent)
 raw = htmlContent
 
@@ -59,7 +61,14 @@ for node, label in labels.items():
 
 ax.xaxis.set_visible(False)
 ax.yaxis.set_visible(False)
-htmlContent = "Neeraj"
+
+if flag=="2" :
+        output = cv2.imread("./public/images/output.jpg")
+        output2= output.copy()
+        cv2.imwrite('./public/images/output2.jpg', output2)
+        print("from 2")
+
+
 plt.savefig("./public/images/output.jpg")
 #plt.show()
 
